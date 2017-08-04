@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "extraambiance:items/light_simple"},
+		"particle" : "extraambiance:items/light_simple"}
+}

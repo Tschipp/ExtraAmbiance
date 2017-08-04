@@ -1,0 +1,10 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "extraambiance:particle/pulsating_eye",
+		"layer1": "extraambiance:particle/exclamation",
+		"layer2": "extraambiance:particle/question"
+
+
+    }
+}

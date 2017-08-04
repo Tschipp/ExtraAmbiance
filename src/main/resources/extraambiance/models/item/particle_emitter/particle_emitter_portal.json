@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "extraambiance:items/particle_emitter",
+		"layer1": "extraambiance:items/particle/portal"
+    }
+}

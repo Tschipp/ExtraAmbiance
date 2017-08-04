@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "extraambiance:items/light_dimmable_comparator",
+		"layer1": "extraambiance:items/particle/comparator"
+    }
+}
