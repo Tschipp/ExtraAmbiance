@@ -13,6 +13,7 @@ tile.particle_emitter_advanced.name=Advanced Particle Emitter
 tile.light_dimmable_comparator.name=Comparing Redstone Light
 tile.light_dimmable_comparator_inverted.name=Comparing Redstone Light (Inverted)
 tile.sound_emitter_advanced.name=Advanced Sound Emitter
+tile.light_colored.name=Colored Light
 
 tile.particle_emitter.flame.name=Particle Emitter (Flame)
 tile.particle_emitter.largesmoke.name=Particle Emitter (Large Smoke)
@@ -121,6 +122,7 @@ desc.particle_emitter_advanced=Advanced Particle Emitter, can emit different par
 desc.sound_emitter=Emits sound at random intervals
 desc.sound_emitter_light=Works like a Sound Emitter, but also gives off Light
 desc.sound_emitter_advanced=Advanced Sound Emitter, can emit all sounds with different volume and pitch
+desc.light_colored=Light that can have any color
 
 gui.movement=Movement
 gui.visual=Visual
@@ -158,7 +160,6 @@ gui.sound=Sound
 gui.position=Position
 gui.pitch=Pitch
 gui.volume=Volume
-
 
 
 
