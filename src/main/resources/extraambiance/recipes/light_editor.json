@@ -1,0 +1,23 @@
+{
+   "type": "minecraft:crafting_shaped",
+   "pattern": [
+      " #L",
+      " ##",
+      "#  "
+   ],
+   "key": {
+      "#": {
+         "type": "forge:ore_dict",
+		 "ore" : "ingotIron"
+      },
+      "L": {
+         "item": "extraambiance:light_simple",
+         "data": 0
+      }
+   },
+   "result": {
+      "item": "extraambiance:light_editor",
+      "data": 0,
+      "count": 1
+   }
+}

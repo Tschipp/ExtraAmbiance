@@ -1,0 +1,95 @@
+{
+   "type": "minecraft:crafting_shapeless",
+   "ingredients": [
+      {
+         "item": "minecraft:noteblock",
+         "data": 0
+      },
+      {
+         "item": "minecraft:hopper",
+         "data": 0
+      },
+      {
+         "item": "#BONDING_AGENT"
+      },
+      {
+         "type": "forge:ore_dict",
+         "ore": "gemDiamond"
+      },
+	  [
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 0
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 1
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 2
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 3
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 4
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 5
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 6
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 7
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 8
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 9
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 10
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 11
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 12
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 13
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 14
+		},
+		{
+			"item": "extraambiance:sound_emitter",
+			"data": 15
+		}
+	  ],
+      {
+         "item": "extraambiance:light_dimmable",
+         "data": 0
+      }
+   ],
+   "result": {
+      "item": "extraambiance:sound_emitter_advanced",
+      "data": 0,
+      "count": 1
+   }
+}

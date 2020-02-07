@@ -1,0 +1,19 @@
+{
+   "type": "minecraft:crafting_shapeless",
+   "ingredients": [
+      {
+         "item": "extraambiance:light_simple",
+         "data": 0
+      },
+      {
+         "item": "extraambiance:particle_emitter",
+         "data": 11
+      }
+   ],
+   "result": {
+      "item": "extraambiance:particle_emitter_light",
+      "data": 11,
+      "count": 4
+   },
+   "group": "particle_emitter_light"
+}

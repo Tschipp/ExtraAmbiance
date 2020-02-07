@@ -1,0 +1,18 @@
+{
+   "type": "minecraft:crafting_shapeless",
+   "ingredients": [
+      {
+         "item": "extraambiance:light_redstone",
+         "data": 0
+      },
+      {
+         "item": "minecraft:redstone_torch",
+         "data": 0
+      }
+   ],
+   "result": {
+      "item": "extraambiance:light_redstone_inverted",
+      "data": 0,
+      "count": 1
+   }
+}

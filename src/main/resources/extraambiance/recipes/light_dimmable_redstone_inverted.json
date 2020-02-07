@@ -1,0 +1,19 @@
+{
+   "type": "minecraft:crafting_shapeless",
+   "ingredients": [
+      {
+         "item": "extraambiance:light_redstone_inverted",
+         "data": 0
+      },
+      {
+         "item": "minecraft:comparator",
+         "data": 0
+      }
+   ],
+   "result": {
+      "item": "extraambiance:light_dimmable_redstone_inverted",
+      "data": 0,
+      "count": 1
+   },
+   "group": "dimmable_inverted"
+}

@@ -1,0 +1,26 @@
+{
+   "type": "minecraft:crafting_shapeless",
+   "ingredients": [
+      {
+         "item": "minecraft:noteblock",
+         "data": 0
+      },
+      {
+         "item": "minecraft:hopper",
+         "data": 0
+      },
+      {
+         "item": "minecraft:skull",
+         "data": 1
+      },
+      {
+         "item": "#BONDING_AGENT"
+      }
+   ],
+   "result": {
+      "item": "extraambiance:sound_emitter",
+      "data": 14,
+      "count": 4
+   },
+   "group": "sound_emitter_simple"
+}

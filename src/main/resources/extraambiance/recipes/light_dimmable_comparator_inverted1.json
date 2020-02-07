@@ -1,0 +1,23 @@
+{
+   "type": "minecraft:crafting_shapeless",
+   "ingredients": [
+      {
+         "type": "forge:ore_dict",
+         "ore": "dustRedstone"
+      },
+      {
+         "item": "extraambiance:light_dimmable_redstone",
+         "data": 0
+      },
+      {
+         "item": "minecraft:redstone_torch",
+         "data": 0
+      }
+   ],
+   "result": {
+      "item": "extraambiance:light_dimmable_comparator_inverted",
+      "data": 0,
+      "count": 1
+   },
+   "group": "comparator_inverted"
+}

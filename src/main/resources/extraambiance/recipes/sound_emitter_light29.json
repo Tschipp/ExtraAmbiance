@@ -1,0 +1,19 @@
+{
+   "type": "minecraft:crafting_shapeless",
+   "ingredients": [
+      {
+         "item": "extraambiance:light_simple",
+         "data": 0
+      },
+      {
+         "item": "extraambiance:sound_emitter",
+         "data": 14
+      }
+   ],
+   "result": {
+      "item": "extraambiance:sound_emitter_light",
+      "data": 14,
+      "count": 4
+   },
+   "group": "sound_emitter_light"
+}

@@ -1,0 +1,18 @@
+{
+   "type": "minecraft:crafting_shapeless",
+   "ingredients": [
+      {
+         "item": "extraambiance:light_simple",
+         "data": 0
+      },
+      {
+         "item": "minecraft:comparator",
+         "data": 0
+      }
+   ],
+   "result": {
+      "item": "extraambiance:light_dimmable",
+      "data": 0,
+      "count": 1
+   }
+}
