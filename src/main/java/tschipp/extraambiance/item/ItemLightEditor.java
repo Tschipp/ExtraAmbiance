@@ -2,6 +2,9 @@ package tschipp.extraambiance.item;
 
 import java.util.List;
 
+import javax.annotation.Nullable;
+
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -80,7 +83,7 @@ public class ItemLightEditor extends TSItem implements ILightEditor
 	}
 	
 	@Override
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
+ public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
 	{
 		tooltip.add(I18n.translateToLocal("desc.light_editor"));
 		

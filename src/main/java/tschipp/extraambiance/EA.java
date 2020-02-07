@@ -19,14 +19,14 @@ import tschipp.tschipplib.network.CTileEntitySyncPacketHandler;
 import tschipp.tschipplib.network.STileEntitySyncPacket;
 import tschipp.tschipplib.network.STileEntitySyncPacketHandler;
 
-@Mod(modid = EA.MODID, name = EA.NAME, version = EA.VERSION, acceptedMinecraftVersions = EA.ACCEPTED_VERSIONS, dependencies = "required-after:tschipplib@[1.1,)")
+@Mod(modid = EA.MODID, name = EA.NAME, version = EA.VERSION, acceptedMinecraftVersions = EA.ACCEPTED_VERSIONS, dependencies = "required-after:tschipplib@[1.1,);after:albedo")
 
 public class EA {
 	
 	public final static String MODID = "extraambiance";
 	public final static String NAME = "Extra Ambiance";
-	public final static String VERSION = "1.0";
-	public final static String ACCEPTED_VERSIONS = "1.11.2";
+	public final static String VERSION = "1.1";
+	public final static String ACCEPTED_VERSIONS = "[1.12.2,1.13)";
 
 
 	@Instance(value = MODID)

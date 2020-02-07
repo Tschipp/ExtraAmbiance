@@ -2,10 +2,13 @@ package tschipp.extraambiance.item;
 
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 import tschipp.extraambiance.api.LightData;
 
 public class ItemBlockParticleEmitterAdvanced extends ItemBlockLight
@@ -17,9 +20,9 @@ public class ItemBlockParticleEmitterAdvanced extends ItemBlockLight
 	}
 	
 	 @Override
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
+ public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
 	{
-		 super.addInformation(stack, playerIn, tooltip, advanced);
+		 super.addInformation(stack, worldIn, tooltip, flagIn);
 		 
 		 
 		 LightData lightData = LightData.getLightDataFromStack(stack);

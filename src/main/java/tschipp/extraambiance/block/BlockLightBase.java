@@ -24,9 +24,11 @@ import tschipp.extraambiance.api.Constants;
 import tschipp.extraambiance.api.ILight;
 import tschipp.tschipplib.block.TSBlock;
 
-public class BlockLightBase extends TSBlock implements ILight {
+public class BlockLightBase extends TSBlock implements ILight
+{
 
-	public BlockLightBase(String name) {
+	public BlockLightBase(String name)
+	{
 		super(name, Material.SPONGE, MapColor.AIR, EA.MODID, false);
 		this.setCreativeTab(EA.extraambiance);
 		this.setHardness(0.5f);
@@ -35,52 +37,50 @@ public class BlockLightBase extends TSBlock implements ILight {
 		this.setTickRandomly(true);
 
 	}
-	
+
 	@Override
 	public EnumBlockRenderType getRenderType(IBlockState state)
-    {
-        return EnumBlockRenderType.INVISIBLE;
-    }
-	
-	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return Constants.LIGHT_AABB;
-	
+	{
+		return EnumBlockRenderType.INVISIBLE;
 	}
-	
+
 	@Override
-	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+	{
+		return Constants.LIGHT_AABB;
+
+	}
+
+	@Override
+	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+	{
 		return Block.NULL_AABB;
 	}
-		
-	
+
 	@Override
-	public boolean isFullyOpaque(IBlockState state) {
+	public boolean isFullBlock(IBlockState state)
+	{
 		return false;
 	}
-	
+
 	@Override
-	public boolean isFullBlock(IBlockState state) {
+	public boolean isOpaqueCube(IBlockState state)
+	{
 		return false;
 	}
-	
-	@Override
-	public boolean isOpaqueCube(IBlockState state) {
-		return false;
-	}
-	
+
 	@Override
 	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos)
 	{
 		return false;
 	}
-	
+
 	@Override
 	public boolean isBlockNormalCube(IBlockState state)
 	{
 		return false;
 	}
-	
+
 	@Override
 	public boolean isFullCube(IBlockState state)
 	{
@@ -89,10 +89,10 @@ public class BlockLightBase extends TSBlock implements ILight {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void onHover(EntityPlayer player, BlockPos pos, EnumHand hand, boolean editer) 
+	public void onHover(EntityPlayer player, BlockPos pos, EnumHand hand, boolean editer)
 	{
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
@@ -110,10 +110,7 @@ public class BlockLightBase extends TSBlock implements ILight {
 	@Override
 	public void onShiftRightClick(EntityPlayer player, World world, BlockPos pos, ItemStack stack, EnumHand hand)
 	{
-		
-	}
 
-	
-	
+	}
 
 }

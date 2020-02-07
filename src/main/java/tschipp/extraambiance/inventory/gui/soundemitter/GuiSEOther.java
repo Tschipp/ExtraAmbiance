@@ -59,7 +59,7 @@ public class GuiSEOther extends GuiBase
 		this.back = this.addButton(new GuiButton(0, this.guiLeft + 47, this.guiTop + 57, 36, 20, I18n.translateToLocal("gui.back")));
 		this.needsRedstone = this.addButton(new GuiButton(1, this.guiLeft + 47, this.guiTop + 30, 36, 20, "" + te.needsPower));
 
-		this.spawnTime = new NumericTextField(0, fontRendererObj, guiLeft + 47, guiTop + 8, 36, 18, true, false);
+		this.spawnTime = new NumericTextField(0, fontRenderer, guiLeft + 47, guiTop + 8, 36, 18, true, false);
 		this.spawnTime.setText("" + te.spawnTime);
 
 	}
@@ -71,11 +71,11 @@ public class GuiSEOther extends GuiBase
 
 		this.spawnTime.drawTextBox();
 		
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.spawn"), this.guiLeft + 7, this.guiTop + 7, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.delay") + ":", this.guiLeft + 8, this.guiTop + 17, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.spawn"), this.guiLeft + 7, this.guiTop + 7, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.delay") + ":", this.guiLeft + 8, this.guiTop + 17, 16777215);
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.needs"), this.guiLeft + 9, this.guiTop + 32, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.redstone") + ":", this.guiLeft + 3, this.guiTop + 40, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.needs"), this.guiLeft + 9, this.guiTop + 32, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.redstone") + ":", this.guiLeft + 3, this.guiTop + 40, 16777215);
 		
 	}
 

@@ -58,14 +58,14 @@ public class GuiSESound extends GuiBase
 		this.randomVolume = this.addButton(new GuiButton(1, this.guiLeft + 130, this.guiTop + 36, 36, 20, "" + te.useRandomPitch));
 		this.randomPitch = this.addButton(new GuiButton(2, this.guiLeft + 130, this.guiTop + 60, 36, 20, "" + te.needsPower));
 
-		this.sound = new GuiTextField(0, fontRendererObj, guiLeft + 51, this.guiTop + 9, 115, 18);
+		this.sound = new GuiTextField(0, fontRenderer, guiLeft + 51, this.guiTop + 9, 115, 18);
 		this.sound.setMaxStringLength(32000);
 		this.sound.setText(te.soundName);
 
-		this.volume = new NumericTextField(1, fontRendererObj, guiLeft + 51, guiTop + 37, 36, 18, false, false);
+		this.volume = new NumericTextField(1, fontRenderer, guiLeft + 51, guiTop + 37, 36, 18, false, false);
 		this.volume.setText("" + te.volume);
 
-		this.pitch = new NumericTextField(2, fontRendererObj, guiLeft + 51, guiTop + 61, 36, 18, false, false);
+		this.pitch = new NumericTextField(2, fontRenderer, guiLeft + 51, guiTop + 61, 36, 18, false, false);
 		this.pitch.setText("" + te.pitch);
 
 	}
@@ -87,17 +87,17 @@ public class GuiSESound extends GuiBase
 		this.pitch.drawTextBox();
 
 		
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.sound") + ":", this.guiLeft + 11, this.guiTop + 14, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.sound") + ":", this.guiLeft + 11, this.guiTop + 14, 16777215);
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.volume") + ":", this.guiLeft + 11, this.guiTop + 42, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.volume") + ":", this.guiLeft + 11, this.guiTop + 42, 16777215);
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.pitch") + ":", this.guiLeft + 13, this.guiTop + 65, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.pitch") + ":", this.guiLeft + 13, this.guiTop + 65, 16777215);
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.random"), this.guiLeft + 91, this.guiTop + 37, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.volume") + ":", this.guiLeft + 91, this.guiTop + 46, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.random"), this.guiLeft + 91, this.guiTop + 37, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.volume") + ":", this.guiLeft + 91, this.guiTop + 46, 16777215);
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.random"), this.guiLeft + 91, this.guiTop + 62, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.pitch") + ":", this.guiLeft + 95, this.guiTop + 71, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.random"), this.guiLeft + 91, this.guiTop + 62, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.pitch") + ":", this.guiLeft + 95, this.guiTop + 71, 16777215);
 	}
 
 	@Override

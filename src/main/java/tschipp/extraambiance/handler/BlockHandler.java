@@ -4,9 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import tschipp.extraambiance.EA;
+import tschipp.extraambiance.block.BlockColoredLight;
 import tschipp.extraambiance.block.BlockLightComparator;
 import tschipp.extraambiance.block.BlockLightDimmable;
 import tschipp.extraambiance.block.BlockLightDimmableRedstone;
@@ -19,7 +21,8 @@ import tschipp.extraambiance.block.BlockSoundEmitterSimple;
 import tschipp.tschipplib.block.IMetaBlockName;
 import tschipp.tschipplib.util.TSBlockRendering;
 
-public class BlockHandler {
+public class BlockHandler
+{
 
 	public static Block simpleLight;
 	public static Block redstoneLight;
@@ -33,13 +36,15 @@ public class BlockHandler {
 	public static Block particleEmitterSimple;
 	public static Block particleEmitterSimpleLight;
 	public static Block particleEmitterAdvanced;
-	
+
 	public static Block soundEmitterSimple;
 	public static Block soundEmitterSimpleLight;
 	public static Block soundEmitterAdvanced;
 
-	public static void preInit() 
-	{		
+	public static Block coloredLight;
+
+	public static void preInit()
+	{
 		simpleLight = new BlockLightSimple();
 		redstoneLight = new BlockLightRedstone(false);
 		redstoneLightInverted = new BlockLightRedstone(true);
@@ -49,6 +54,9 @@ public class BlockHandler {
 		comparatorLight = new BlockLightComparator(false);
 		comparatorLightInverted = new BlockLightComparator(true);
 
+		if (Loader.isModLoaded("albedo"))
+			coloredLight = new BlockColoredLight();
+		
 		particleEmitterSimple = new BlockParticleEmitterSimple(false);
 		particleEmitterSimpleLight = new BlockParticleEmitterSimple(true);
 		particleEmitterAdvanced = new BlockParticleEmitterAdvanced();
@@ -57,12 +65,14 @@ public class BlockHandler {
 		soundEmitterSimpleLight = new BlockSoundEmitterSimple(true);
 		soundEmitterAdvanced = new BlockSoundEmitterAdvanced();
 
+		
+
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public static class Rendering extends TSBlockRendering
 	{
-		public static void preInitRender() 
+		public static void preInitRender()
 		{
 			reg(simpleLight);
 			reg(redstoneLight);
@@ -77,6 +87,9 @@ public class BlockHandler {
 			regSoundEmitter();
 			reg(soundEmitterAdvanced);
 			
+			if (Loader.isModLoaded("albedo"))
+				reg(coloredLight);
+
 			ignoreProperties(redstoneLight, BlockLightRedstone.POWERED);
 			ignoreProperties(redstoneLightInverted, BlockLightRedstone.POWERED);
 			ignoreProperties(particleEmitterSimple, BlockParticleEmitterSimple.PARTICLE);
@@ -91,37 +104,33 @@ public class BlockHandler {
 			ignoreProperties(soundEmitterSimpleLight, BlockSoundEmitterSimple.SOUND);
 			ignoreProperties(soundEmitterAdvanced, BlockSoundEmitterAdvanced.POWERED);
 
+			if (Loader.isModLoaded("albedo"))
+				ignoreProperties(coloredLight, BlockColoredLight.POWERED);
 
 			ModelBakery.registerItemVariants(ItemHandler.lighteditor, new ResourceLocation(EA.MODID + ":" + "particles"));
 
 		}
-		
-		
+
 		public static void regParticleEmitter()
 		{
-			for(int i = 0; i < 16; i++)
+			for (int i = 0; i < 16; i++)
 			{
 				regSpecial(particleEmitterSimple, i, "particle_emitter/particle_emitter_" + ((IMetaBlockName) particleEmitterSimple).getSpecialName(new ItemStack(particleEmitterSimple, 1, i)));
 				regSpecial(particleEmitterSimpleLight, i, "particle_emitter_light/particle_emitter_" + ((IMetaBlockName) particleEmitterSimpleLight).getSpecialName(new ItemStack(particleEmitterSimpleLight, 1, i)));
 			}
-		
+
 		}
-		
+
 		public static void regSoundEmitter()
 		{
-			for(int i = 0; i < 16; i++)
+			for (int i = 0; i < 16; i++)
 			{
 				regSpecial(soundEmitterSimple, i, "sound_emitter/sound_emitter_" + ((IMetaBlockName) soundEmitterSimple).getSpecialName(new ItemStack(soundEmitterSimple, 1, i)));
 				regSpecial(soundEmitterSimpleLight, i, "sound_emitter_light/sound_emitter_" + ((IMetaBlockName) soundEmitterSimpleLight).getSpecialName(new ItemStack(soundEmitterSimpleLight, 1, i)));
 
 			}
 		}
-		
-		
+
 	}
-
-
-	
-	
 
 }

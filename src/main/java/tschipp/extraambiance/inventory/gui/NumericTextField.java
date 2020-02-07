@@ -13,9 +13,9 @@ public class NumericTextField extends GuiTextField
 	private boolean intOnly;
 	private boolean allowNegatives;
 
-	public NumericTextField(int componentId, FontRenderer fontrendererObj, int x, int y, int par5Width, int par6Height, boolean intOnly, boolean allowNegatives)
+	public NumericTextField(int componentId, FontRenderer fontRenderer, int x, int y, int par5Width, int par6Height, boolean intOnly, boolean allowNegatives)
 	{
-		super(componentId, fontrendererObj, x, y, par5Width, par6Height);
+		super(componentId, fontRenderer, x, y, par5Width, par6Height);
 		this.intOnly = intOnly;
 		this.allowNegatives = allowNegatives;
 	}

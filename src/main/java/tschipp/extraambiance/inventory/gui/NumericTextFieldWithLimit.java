@@ -8,9 +8,9 @@ public class NumericTextFieldWithLimit extends NumericTextField
 {
 	private int limit;
 
-	public NumericTextFieldWithLimit(int componentId, FontRenderer fontrendererObj, int x, int y, int par5Width, int par6Height, boolean intOnly, boolean allowNegatives, int limit)
+	public NumericTextFieldWithLimit(int componentId, FontRenderer fontRenderer, int x, int y, int par5Width, int par6Height, boolean intOnly, boolean allowNegatives, int limit)
 	{
-		super(componentId, fontrendererObj, x, y, par5Width, par6Height, intOnly, allowNegatives);
+		super(componentId, fontRenderer, x, y, par5Width, par6Height, intOnly, allowNegatives);
 		this.limit = limit;
 	}
 

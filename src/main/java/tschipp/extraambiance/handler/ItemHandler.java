@@ -4,6 +4,7 @@ import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.Loader;
 import tschipp.extraambiance.EA;
 import tschipp.extraambiance.item.ItemBlockLight;
 import tschipp.extraambiance.item.ItemBlockLightSubtypes;
@@ -12,8 +13,9 @@ import tschipp.extraambiance.item.ItemBlockSoundEmitterAdvanced;
 import tschipp.extraambiance.item.ItemLightEditor;
 import tschipp.tschipplib.util.TSItemRendering;
 
-public class ItemHandler {
-	
+public class ItemHandler
+{
+
 	public static ItemBlock simpleLight;
 	public static ItemBlock redstoneLight;
 	public static ItemBlock redstoneLightInverted;
@@ -30,14 +32,15 @@ public class ItemHandler {
 	public static ItemBlock soundEmitterSimple;
 	public static ItemBlock soundEmitterSimpleLight;
 	public static ItemBlock soundEmitterAdvanced;
-	
+
+	public static ItemBlock coloredLight;
+
 	public static Item lighteditor;
-	
-	
+
 	public static void preInit()
 	{
 		lighteditor = new ItemLightEditor();
-		
+
 		simpleLight = new ItemBlockLight(BlockHandler.simpleLight);
 		redstoneLight = new ItemBlockLight(BlockHandler.redstoneLight);
 		redstoneLightInverted = new ItemBlockLight(BlockHandler.redstoneLightInverted);
@@ -47,6 +50,9 @@ public class ItemHandler {
 		comparatorLight = new ItemBlockLight(BlockHandler.comparatorLight);
 		comparatorLightInverted = new ItemBlockLight(BlockHandler.comparatorLightInverted);
 
+		if (Loader.isModLoaded("albedo"))
+			coloredLight = new ItemBlockLight(BlockHandler.coloredLight);
+		
 		particleEmitterSimple = new ItemBlockLightSubtypes(BlockHandler.particleEmitterSimple);
 		particleEmitterSimpleLight = new ItemBlockLightSubtypes(BlockHandler.particleEmitterSimpleLight);
 		particleEmitterAdvanced = new ItemBlockParticleEmitterAdvanced(BlockHandler.particleEmitterAdvanced);
@@ -55,19 +61,16 @@ public class ItemHandler {
 		soundEmitterSimpleLight = new ItemBlockLightSubtypes(BlockHandler.soundEmitterSimpleLight);
 		soundEmitterAdvanced = new ItemBlockSoundEmitterAdvanced(BlockHandler.soundEmitterAdvanced);
 
+		
+
 	}
-	
-	
+
 	public static class Rendering extends TSItemRendering
 	{
 		public static void preInitRender()
 		{
 			reg(lighteditor);
-
 		}
 	}
-	
-	
-	
 
 }

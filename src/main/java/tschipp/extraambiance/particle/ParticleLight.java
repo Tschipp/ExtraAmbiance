@@ -1,17 +1,10 @@
 package tschipp.extraambiance.particle;
 
-import java.awt.Color;
-import java.awt.image.ColorModel;
-
-import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.Particle;
-import net.minecraft.client.particle.ParticleCloud;
-import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import tschipp.tschipplib.helper.ColorHelper;
 
 public class ParticleLight extends Particle
@@ -33,7 +26,7 @@ public class ParticleLight extends Particle
 
 	}
 
-	public void renderParticle(VertexBuffer buffer, Entity entityIn, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ)
+	public void renderParticle(BufferBuilder buffer, Entity entityIn, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ)
 	{
 		float f = ((float) this.particleAge + partialTicks) / (float) this.particleMaxAge * 32.0F;
 		f = MathHelper.clamp(f, 0.0F, 1.0F);

@@ -87,7 +87,7 @@ public interface ILight
 	@SideOnly(Side.CLIENT)
 	default void generateViewingParticles(World world, IBlockState state, BlockPos pos, Random rand)
 	{
-		List<EntityPlayerSP> players = world.getEntitiesWithinAABB(EntityPlayerSP.class, new AxisAlignedBB(pos).expandXyz(Constants.PARTICLE_SPAWN_RANGE));
+		List<EntityPlayerSP> players = world.getEntitiesWithinAABB(EntityPlayerSP.class, new AxisAlignedBB(pos).expand(Constants.PARTICLE_SPAWN_RANGE, Constants.PARTICLE_SPAWN_RANGE, Constants.PARTICLE_SPAWN_RANGE).expand(-Constants.PARTICLE_SPAWN_RANGE, -Constants.PARTICLE_SPAWN_RANGE, -Constants.PARTICLE_SPAWN_RANGE));
 		for (int i = 0; i < players.size(); i++)
 		{
 			EntityPlayer player = players.get(i);

@@ -63,16 +63,16 @@ public class GuiPEOther extends GuiBase
 		this.back = this.addButton(new GuiButton(0, this.guiLeft + 133, this.guiTop + 62, 36, 20, I18n.translateToLocal("gui.back")));
 		this.needsPower = this.addButton(new GuiButton(1, this.guiLeft + 71, this.guiTop + 62, 36, 20, "" + te.needsPower));
 
-		this.spawnTime = new NumericTextField(0, fontRendererObj, guiLeft + 49, this.guiTop + 11, 36, 18, true, false);
+		this.spawnTime = new NumericTextField(0, fontRenderer, guiLeft + 49, this.guiTop + 11, 36, 18, true, false);
 		this.spawnTime.setText("" + te.spawnTime);
 
-		this.spawnCount = new NumericTextFieldWithLimit(1, fontRendererObj, guiLeft + 49, guiTop + 34, 36, 18, true, false, ConfigHandler.maxSpawnCount);
+		this.spawnCount = new NumericTextFieldWithLimit(1, fontRenderer, guiLeft + 49, guiTop + 34, 36, 18, true, false, ConfigHandler.maxSpawnCount);
 		this.spawnCount.setText("" + te.spawnCount);
 
-		this.particleSize = new NumericTextFieldWithLimit(2, fontRendererObj, guiLeft + 132, guiTop + 11, 36, 18, false, false, ConfigHandler.maxParticleSize);
+		this.particleSize = new NumericTextFieldWithLimit(2, fontRenderer, guiLeft + 132, guiTop + 11, 36, 18, false, false, ConfigHandler.maxParticleSize);
 		this.particleSize.setText("" + te.particleSize);
 
-		this.particleMaxAge = new NumericTextFieldWithLimit(3, fontRendererObj, guiLeft + 132, guiTop + 34, 36, 18, true, false, ConfigHandler.maxParticleMaxAge);
+		this.particleMaxAge = new NumericTextFieldWithLimit(3, fontRenderer, guiLeft + 132, guiTop + 34, 36, 18, true, false, ConfigHandler.maxParticleMaxAge);
 		this.particleMaxAge.setText("" + te.particleMaxAge);
 	}
 
@@ -92,17 +92,17 @@ public class GuiPEOther extends GuiBase
 		this.particleSize.drawTextBox();
 		this.particleMaxAge.drawTextBox();
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.spawn"), this.guiLeft + 10, this.guiTop + 10, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.delay") + ":", this.guiLeft + 11, this.guiTop + 19, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.spawn"), this.guiLeft + 10, this.guiTop + 10, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.delay") + ":", this.guiLeft + 11, this.guiTop + 19, 16777215);
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.spawn"), this.guiLeft + 10, this.guiTop + 33, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.count") + ":", this.guiLeft + 11, this.guiTop + 42, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.spawn"), this.guiLeft + 10, this.guiTop + 33, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.count") + ":", this.guiLeft + 11, this.guiTop + 42, 16777215);
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.size") + ":", this.guiLeft + 96, this.guiTop + 15, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.maxage") + ":", this.guiLeft + 88, this.guiTop + 38, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.size") + ":", this.guiLeft + 96, this.guiTop + 15, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.maxage") + ":", this.guiLeft + 88, this.guiTop + 38, 16777215);
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.needs"), this.guiLeft + 18, this.guiTop + 63, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.redstone") + ":", this.guiLeft + 10, this.guiTop + 72, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.needs"), this.guiLeft + 18, this.guiTop + 63, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.redstone") + ":", this.guiLeft + 10, this.guiTop + 72, 16777215);
 
 	}
 

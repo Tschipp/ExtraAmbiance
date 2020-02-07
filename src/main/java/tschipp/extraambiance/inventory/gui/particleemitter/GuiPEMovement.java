@@ -59,9 +59,9 @@ public class GuiPEMovement extends GuiBase
 
 		for (int i = 0; i < 3; i++)
 		{
-			spawn[i] = new NumericTextField(0 + i, fontRendererObj, this.guiLeft + 51, this.guiTop + 9 + (24 * i), 35, 18, false, true);
-			radius[i] = new NumericTextField(3 + i, fontRendererObj, this.guiLeft + 51, this.guiTop + 86 + (24 * i), 35, 18, false, false);
-			motion[i] = new NumericTextField(6 + i, fontRendererObj, this.guiLeft + 135, this.guiTop + 9 + (24 * i), 35, 18, false, true);
+			spawn[i] = new NumericTextField(0 + i, fontRenderer, this.guiLeft + 51, this.guiTop + 9 + (24 * i), 35, 18, false, true);
+			radius[i] = new NumericTextField(3 + i, fontRenderer, this.guiLeft + 51, this.guiTop + 86 + (24 * i), 35, 18, false, false);
+			motion[i] = new NumericTextField(6 + i, fontRenderer, this.guiLeft + 135, this.guiTop + 9 + (24 * i), 35, 18, false, true);
 		}
 
 		spawn[0].setText("" + te.spawnX);
@@ -97,13 +97,13 @@ public class GuiPEMovement extends GuiBase
 
 		for (int i = 0; i < 3; i++)
 		{
-			this.drawString(fontRendererObj, I18n.translateToLocal("gui.spawn." + i) + ":", this.guiLeft + 5, this.guiTop + 14 + (24 * i), 16777215);
-			this.drawString(fontRendererObj, I18n.translateToLocal("gui.radius." + i) + ":", this.guiLeft + 5, this.guiTop + 91 + (24 * i), 16777215);
-			this.drawString(fontRendererObj, I18n.translateToLocal("gui.motion." + i) + ":", this.guiLeft + 90, this.guiTop + 14 + (24 * i), 16777215);
+			this.drawString(fontRenderer, I18n.translateToLocal("gui.spawn." + i) + ":", this.guiLeft + 5, this.guiTop + 14 + (24 * i), 16777215);
+			this.drawString(fontRenderer, I18n.translateToLocal("gui.radius." + i) + ":", this.guiLeft + 5, this.guiTop + 91 + (24 * i), 16777215);
+			this.drawString(fontRenderer, I18n.translateToLocal("gui.motion." + i) + ":", this.guiLeft + 90, this.guiTop + 14 + (24 * i), 16777215);
 		}
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.random"), this.guiLeft + 90, this.guiTop + 85, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.motion") + ":", this.guiLeft + 90, this.guiTop + 94, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.random"), this.guiLeft + 90, this.guiTop + 85, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.motion") + ":", this.guiLeft + 90, this.guiTop + 94, 16777215);
 
 	}
 

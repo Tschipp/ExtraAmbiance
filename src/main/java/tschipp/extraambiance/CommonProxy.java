@@ -17,8 +17,6 @@ import tschipp.extraambiance.handler.CraftingHandler;
 import tschipp.extraambiance.handler.GuiHandler;
 import tschipp.extraambiance.handler.ItemHandler;
 import tschipp.extraambiance.handler.TileEntityHandler;
-import tschipp.forgottenitems.FIM;
-import tschipp.forgottenitems.util.FIGuiHandler;
 
 public class CommonProxy {
 	

@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
+import tschipp.extraambiance.inventory.gui.GuiColoredLight;
 import tschipp.extraambiance.inventory.gui.particleemitter.GuiPEMovement;
 import tschipp.extraambiance.inventory.gui.particleemitter.GuiPEOther;
 import tschipp.extraambiance.inventory.gui.particleemitter.GuiPEVisual;
@@ -12,6 +13,7 @@ import tschipp.extraambiance.inventory.gui.soundemitter.GuiSEOther;
 import tschipp.extraambiance.inventory.gui.soundemitter.GuiSEPosition;
 import tschipp.extraambiance.inventory.gui.soundemitter.GuiSESound;
 import tschipp.extraambiance.inventory.gui.soundemitter.GuiSoundEmitter;
+import tschipp.extraambiance.tileentity.TileEntityColoredLight;
 import tschipp.extraambiance.tileentity.TileEntityParticleEmitter;
 import tschipp.extraambiance.tileentity.TileEntitySoundEmitter;
 
@@ -45,6 +47,8 @@ public class GuiHandler implements IGuiHandler
 			return new GuiSEPosition((TileEntitySoundEmitter)world.getTileEntity(new BlockPos(x,y,z)));
 		case 7:
 			return new GuiSEOther((TileEntitySoundEmitter)world.getTileEntity(new BlockPos(x,y,z)));
+		case 8:
+			return new GuiColoredLight((TileEntityColoredLight)world.getTileEntity(new BlockPos(x,y,z)));
 
 
 		}

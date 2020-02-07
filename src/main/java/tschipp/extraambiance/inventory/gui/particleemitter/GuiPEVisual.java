@@ -79,14 +79,14 @@ public class GuiPEVisual extends GuiBase
 			this.addButton(b);
 		}
 
-		this.colorChangeAmount = new NumericTextField(0, fontRendererObj, guiLeft + 68, this.guiTop + 103, 35, 18, false, false);
+		this.colorChangeAmount = new NumericTextField(0, fontRenderer, guiLeft + 68, this.guiTop + 103, 35, 18, false, false);
 		this.colorChangeAmount.setText("" + te.colorChangeAmount);
 
-		this.particleTexture = new GuiTextField(1, fontRendererObj, guiLeft + 68, guiTop + 128, 96, 18);
+		this.particleTexture = new GuiTextField(1, fontRenderer, guiLeft + 68, guiTop + 128, 96, 18);
 		this.particleTexture.setMaxStringLength(32000);
 		this.particleTexture.setText(te.particleTexture);
 
-		this.arguments = new GuiTextField(2, fontRendererObj, guiLeft + 68, guiTop + 151, 96, 18);
+		this.arguments = new GuiTextField(2, fontRenderer, guiLeft + 68, guiTop + 151, 96, 18);
 		this.arguments.setMaxStringLength(32000);
 		this.arguments.setText(te.arguments);
 
@@ -120,22 +120,22 @@ public class GuiPEVisual extends GuiBase
 			this.arguments.drawTextBox();
 		}
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.customcolor") + ":", this.guiLeft + 10, this.guiTop + 13, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.customcolor") + ":", this.guiLeft + 10, this.guiTop + 13, 16777215);
 
 		if (te.changeColors)
 		{
-			this.drawString(fontRendererObj, I18n.translateToLocal("gui.color"), this.guiLeft + 28, this.guiTop + 103, 16777215);
-			this.drawString(fontRendererObj, I18n.translateToLocal("gui.var") + ":", this.guiLeft + 18, this.guiTop + 112, 16777215);
+			this.drawString(fontRenderer, I18n.translateToLocal("gui.color"), this.guiLeft + 28, this.guiTop + 103, 16777215);
+			this.drawString(fontRenderer, I18n.translateToLocal("gui.var") + ":", this.guiLeft + 18, this.guiTop + 112, 16777215);
 
 		}
 		if (te.useParticleTexture)
-			this.drawString(fontRendererObj, I18n.translateToLocal("gui.texture") + ":", this.guiLeft + 18, this.guiTop + 133, 16777215);
+			this.drawString(fontRenderer, I18n.translateToLocal("gui.texture") + ":", this.guiLeft + 18, this.guiTop + 133, 16777215);
 
 		if (te.usesArguments())
-			this.drawString(fontRendererObj, I18n.translateToLocal("gui.arguments") + ":", this.guiLeft + 10, this.guiTop + 156, 16777215);
+			this.drawString(fontRenderer, I18n.translateToLocal("gui.arguments") + ":", this.guiLeft + 10, this.guiTop + 156, 16777215);
 
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.ignore"), this.guiLeft + 28, this.guiTop + 176, 16777215);
-		this.drawString(fontRendererObj, I18n.translateToLocal("gui.range") + ":", this.guiLeft + 28, this.guiTop + 185, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.ignore"), this.guiLeft + 28, this.guiTop + 176, 16777215);
+		this.drawString(fontRenderer, I18n.translateToLocal("gui.range") + ":", this.guiLeft + 28, this.guiTop + 185, 16777215);
 
 	}
 

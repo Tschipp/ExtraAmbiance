@@ -2,14 +2,9 @@ package tschipp.extraambiance.block;
 
 import java.util.Random;
 
-import tschipp.extraambiance.EA;
-import tschipp.extraambiance.api.ILightEditor;
-import tschipp.extraambiance.api.LightData;
-import tschipp.extraambiance.handler.ItemHandler;
-import tschipp.extraambiance.tileentity.TileEntitySoundEmitter;
-import tschipp.tschipplib.helper.ItemStackHelper;
+import javax.annotation.Nonnull;
+
 import net.minecraft.block.Block;
-import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -27,26 +22,31 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import tschipp.extraambiance.EA;
+import tschipp.extraambiance.api.ILightEditor;
+import tschipp.extraambiance.api.LightData;
+import tschipp.extraambiance.handler.ItemHandler;
+import tschipp.extraambiance.tileentity.TileEntityColoredLight;
+import tschipp.tschipplib.helper.ItemStackHelper;
 
-public class BlockSoundEmitterAdvanced extends BlockLightBase implements ITileEntityProvider
+public class BlockColoredLight extends BlockLightBase
 {
 
 	public static final PropertyBool POWERED = PropertyBool.create("powered");
 
-	public BlockSoundEmitterAdvanced()
+	public BlockColoredLight()
 	{
-		super("sound_emitter_advanced");
+		super("light_colored");
 		this.setDefaultState(this.blockState.getBaseState().withProperty(POWERED, Boolean.valueOf(false)));
-		this.hasTileEntity = true;
 	}
 
 	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta)
+	public boolean hasTileEntity(IBlockState state)
 	{
-		return new TileEntitySoundEmitter();
+		return true;
 	}
-
+	
 	@Override
 	public IBlockState getStateFromMeta(int meta)
 	{
@@ -63,12 +63,6 @@ public class BlockSoundEmitterAdvanced extends BlockLightBase implements ITileEn
 	protected BlockStateContainer createBlockState()
 	{
 		return new BlockStateContainer(this, POWERED);
-	}
-
-	@Override
-	public boolean hasTileEntity(IBlockState state)
-	{
-		return true;
 	}
 
 	@Override
@@ -117,8 +111,24 @@ public class BlockSoundEmitterAdvanced extends BlockLightBase implements ITileEn
 	@Override
 	public Particle getViewingParticle(World world, IBlockState state, BlockPos pos, Random rand)
 	{
-		return EA.proxy.getLightParticle(world, pos, 0.1f, 0.78f, 0f, 1f);
+		return EA.proxy.getLightParticle(world, pos, 0.1f, 1f, 0.46f, 0f);
 
+	}
+
+	@Override
+	public TileEntity createTileEntity(@Nonnull World world, @Nonnull IBlockState state)
+	{
+		return new TileEntityColoredLight();
+	}
+
+	@Override
+	public void onBreak(EntityPlayer player, World world, BlockPos pos)
+	{
+		LightData lightData = LightData.getLightData(world, pos);
+		ItemStack drop = new ItemStack(ItemHandler.coloredLight);
+		lightData.saveToStack(drop);
+
+		Block.spawnAsEntity(world, pos, drop);
 	}
 
 	@Override
@@ -159,17 +169,6 @@ public class BlockSoundEmitterAdvanced extends BlockLightBase implements ITileEn
 	}
 
 	@Override
-	public void onBreak(EntityPlayer player, World world, BlockPos pos)
-	{
-		LightData lightData = LightData.getLightData(world, pos);
-		ItemStack drop = new ItemStack(ItemHandler.soundEmitterAdvanced);
-		lightData.getNbt().setInteger("timer", 0);
-		lightData.saveToStack(drop);
-
-		Block.spawnAsEntity(world, pos, drop);
-	}
-
-	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	{
 		if (ItemStackHelper.hasItemHeld(ILightEditor.class, playerIn))
@@ -177,13 +176,18 @@ public class BlockSoundEmitterAdvanced extends BlockLightBase implements ITileEn
 			EnumHand hand1 = ItemStackHelper.getHandForType(ILightEditor.class, playerIn);
 			if (hand1 == hand)
 			{
-				playerIn.openGui(EA.instance, 4, worldIn, pos.getX(), pos.getY(), pos.getZ());
+				playerIn.openGui(EA.instance, 8, worldIn, pos.getX(), pos.getY(), pos.getZ());
 				Item item = playerIn.getHeldItem(hand1).getItem();
 				((ILightEditor) item).onLightEdit(playerIn, pos, hand1);
 				return true;
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public int getLightValue(IBlockState state, IBlockAccess world, BlockPos pos) {
+		return 0;
 	}
 
 }

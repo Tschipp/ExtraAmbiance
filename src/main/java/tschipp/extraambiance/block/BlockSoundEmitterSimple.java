@@ -53,11 +53,12 @@ public class BlockSoundEmitterSimple extends BlockLightBase implements IMetaBloc
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
+    public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
 	{
+		if(itemIn == EA.extraambiance)
 		for (EnumType type : EnumType.values())
 		{
-			list.add(new ItemStack(itemIn, 1, type.getMetadata()));
+			items.add(new ItemStack(this, 1, type.getMetadata()));
 		}
 	}
 

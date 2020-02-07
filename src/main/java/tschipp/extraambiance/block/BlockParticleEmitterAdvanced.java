@@ -37,7 +37,7 @@ public class BlockParticleEmitterAdvanced extends BlockLightBase implements ITil
 	{
 		super("particle_emitter_advanced");
 		this.setDefaultState(this.blockState.getBaseState().withProperty(POWERED, Boolean.valueOf(false)));
-		this.isBlockContainer = true;
+		this.hasTileEntity = true;
 	}
 
 	@Override
@@ -173,10 +173,14 @@ public class BlockParticleEmitterAdvanced extends BlockLightBase implements ITil
 	{
 		if (ItemStackHelper.hasItemHeld(ILightEditor.class, playerIn))
 		{
-			playerIn.openGui(EA.instance, 0, worldIn, pos.getX(), pos.getY(), pos.getZ());
-			Item item = playerIn.getHeldItem(hand).getItem();
-			((ILightEditor)item).onLightEdit(playerIn, pos, hand);
-			return true;
+			EnumHand hand1 = ItemStackHelper.getHandForType(ILightEditor.class, playerIn);
+			if (hand1 == hand)
+			{
+				playerIn.openGui(EA.instance, 0, worldIn, pos.getX(), pos.getY(), pos.getZ());
+				Item item = playerIn.getHeldItem(hand1).getItem();
+				((ILightEditor) item).onLightEdit(playerIn, pos, hand1);
+				return true;
+			}
 		}
 		return false;
 	}
